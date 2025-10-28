@@ -1,0 +1,393 @@
+:root {
+    --background: 0 0% 100%;
+    --foreground: 240 10% 10%;
+    --primary: 14 100% 57%;
+    --secondary: 280 60% 50%;
+    --muted: 0 0% 96%;
+    --muted-foreground: 240 4% 46%;
+    --border: 240 6% 90%;
+    --radius: 1rem;
+    
+    /* Gradientes */
+    --gradient-primary: linear-gradient(135deg, hsl(14, 100%, 57%), hsl(0, 100%, 50%));
+    --gradient-secondary: linear-gradient(135deg, hsl(280, 60%, 50%), hsl(330, 100%, 50%));
+    --shadow-glow: 0 20px 60px -10px hsla(14, 100%, 57%, 0.4);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.gradient-text-primary {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.gradient-text-secondary {
+    background: var(--gradient-secondary);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/*Botões*/
+
+.btn {
+    display:  inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 0.75rem;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: inherit;
+}
+
+.btn-whatsapp {
+    background: #25D366;
+    color: white;
+    font-size: 1.125rem;
+    padding: 1rem 2rem;
+}
+
+.btn-whatsapp:hover {
+    background: #20BA5A;
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-glow);
+}
+
+.btn-whatsapp-large {
+    background: white;
+    color: hsl(var(--primary));
+    font-size: 1.25rem;
+    padding: 1.25rem 2.5rem;
+    font-weight: 700;
+}
+
+.btn-whatsapp-large:hover {
+    background: rgba(255, 255, 255, 0.9);
+    transform: translateY(-2px) scale(1.05);
+    box-shadow: var(--shadow-glow);
+}
+
+/*hero section*/
+
+.hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.hero-background {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, #1a1a1a, #2d1b1b);
+    background-image: url('../img/fundo.jpg');
+}
+
+.hero-background::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.7), rgba(0,0,0,0.5), rgba(0,0,0,0.7));
+}
+
+.hero-content {
+    position: relative;
+    z-index: 10;
+    max-width: 800px;
+    padding: 0 1rem;
+}
+
+.hero-title {
+    font-size: clamp(3rem, 8vw, 5rem);
+    font-weight: 900;
+    color: white;
+    margin-bottom: 0.5rem;
+    line-height: 1.1;
+}
+
+.hero-subtitle {
+    font-size: clamp(3rem, 8vw, 5rem);
+    font-weight: 900;
+    color: white;
+    margin-bottom: 2rem;
+    line-height: 1.1;
+}
+
+.hero-description {
+    font-size: 1.25rem;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 3rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.hero-features {
+    color: rgba(255, 255, 255, 0.7);
+    margin-top: 1rem;
+    font-size: 0.875rem;
+}
+
+.hero-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 8rem;
+    background: linear-gradient(to top, hsl(var(--background)), transparent);
+}
+
+/* Benefits Section */
+.benefits {
+    padding: 5rem 1rem;
+    background: hsl(var(--background));
+}
+
+.benefits-header {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.benefits-header h2 {
+    font-size: clamp(2.5rem, 5vw, 3.5rem);
+    font-weight: 900;
+    margin-bottom: 1rem;
+}
+
+.benefits-header p {
+    font-size: 1.25rem;
+    color: hsl(var(--muted-foreground));
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.benefit-card {
+    background: white;
+    border: 2px solid hsl(var(--border));
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    transition: all 0.3s ease;
+    animation: fadeInUp 0.6s ease-out;
+}
+
+.benefit-card:hover {
+    border-color: hsl(var(--primary));
+    transform: translateY(-0.5rem);
+    box-shadow: var(--shadow-glow);
+}
+
+.benefit-icon {
+    width: 3.5rem;
+    height: 3.5rem;
+    background: var(--gradient-primary);
+    border-radius: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+
+.benefit-icon svg {
+    width: 1.75rem;
+    height: 1.75rem;
+    color: white;
+}
+
+.benefit-card h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.benefit-card p {
+    color: hsl(var(--muted-foreground));
+}
+
+/* Call to Action Section */
+.cta {
+    position: relative;
+    padding: 5rem 1rem;
+    background: var(--gradient-primary);
+    overflow: hidden;
+}
+
+.cta-background::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    opacity: 0.1;
+}
+
+.cta-background::before {
+    background: 
+        radial-gradient(circle at 20% 20%, white 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, white 0%, transparent 50%);
+    filter: blur(3rem);
+}
+
+.cta-content {
+    position: relative;
+    z-index: 10;
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.cta-content h2 {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 900;
+    color: white;
+    margin-bottom: 1.5rem;
+}
+
+.cta-content p {
+    font-size: 1.25rem;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 3rem;
+}
+
+/* Stats */
+.stats {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 3rem;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.stat-item {
+    text-align: center;
+}
+
+.stat-number {
+    font-size: 2rem;
+    font-weight: 900;
+    color: white;
+}
+
+.stat-label {
+    font-size: 0.875rem;
+    margin-top: 0.25rem;
+}
+
+.stat-divider {
+    width: 1px;
+    height: 3rem;
+    background: rgba(255, 255, 255, 0.3);
+}
+
+/*foot*/
+.foot-container {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: 50px;
+    background-color: #1a1a1a;
+}
+
+.foot-p {
+    margin: 0 25px;
+}
+
+.foot-p a {
+    text-decoration: none;
+    font-size: 1rem;
+    color: #fff;
+}
+
+.foot-span {
+    color: blue;
+}
+
+/* Animações */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-fade-in-up {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .benefits-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .stats {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .stat-divider {
+        width: 3rem;
+        height: 1px;
+    }
+    
+    .hero-title,
+    .hero-subtitle {
+        font-size: 2.5rem;
+    }
+    
+    .btn-whatsapp-large {
+        font-size: 1.125rem;
+        padding: 1rem 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .benefits {
+        padding: 3rem 1rem;
+    }
+    
+    .cta {
+        padding: 3rem 1rem;
+    }
+    
+    .hero-title,
+    .hero-subtitle {
+        font-size: 2rem;
+    }
+}
