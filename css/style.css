@@ -375,6 +375,10 @@ body {
         font-size: 1.125rem;
         padding: 1rem 2rem;
     }
+
+    .foot-p a , .foot-direitos{
+    font-size: 0.5rem;
+    }
 }
 
 @media (max-width: 480px) {
@@ -389,5 +393,9 @@ body {
     .hero-title,
     .hero-subtitle {
         font-size: 2rem;
+    }
+
+    .foot-p a , .foot-direitos{
+    font-size: 0.5rem;
     }
 }
